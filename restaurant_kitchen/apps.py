@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class RestaurantKichenConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'restaurant_kichen'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "restaurant_kichen"
