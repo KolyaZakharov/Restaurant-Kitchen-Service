@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ dish.name }}</h1>
+  <p><strong>Price: </strong>{{ dish.price }}</p>
+  <p><strong>Type of dish: </strong>{{ dish.dish_type }}</p>
+  <p>
+    <strong>Description: </strong>
+    <br>
+    <div>
+      {{ dish.description }}
+    </div>
+  </p>
+  <div class="ml-4">
+    <h3>Cooks</h3>
+    {% for cook in dish.cooks.all %}
+      <hr>
+      <p class="text-muted">
+        <strong>Full name: </strong>{{cook.first_name}} {{ cook.last_name }}
+      </p>
+      <p class="text-muted">
+        <strong>Experience:</strong> {{ cook.years_of_experience }} years
+      </p>
+    {% empty %}
+      <p>No chef has been assigned to this dish yet</p>
+    {% endfor %}
+    <h3>Ingredients</h3>
+    <ul>
+      {% for ingredient in dish.ingredients.all %}
+        <li class="text-muted">{{ingredient}}</li>
+      {% endfor %}
+    </ul>
+
+  </div>
+
+{% endblock %}

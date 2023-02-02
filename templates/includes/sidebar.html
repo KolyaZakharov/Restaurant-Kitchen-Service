@@ -1,0 +1,15 @@
+<ul class="sidebar-nav list-group">
+
+{#    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>#}
+{#    <li class="list-group-item"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>#}
+{#    <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>#}
+
+
+  <br>
+
+  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:index' %}">Home</a></li>
+  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:cook-list' %}">All cooks</a></li>
+  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:dish-list' %}">All dishes</a></li>
+  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:dish-type-list' %}">Types of dish</a></li>
+  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:ingredient-list' %}">All ingredients</a></li>
+</ul>
