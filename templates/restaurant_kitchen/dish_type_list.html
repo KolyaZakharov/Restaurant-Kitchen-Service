@@ -1,16 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Dish type list</h1>
+  <h1>Dish type list
+    <a href="{% url 'restaurant_kitchen:dish-type-create' %}" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
+
   {% if dish_type_list %}
+    <table class="table ml-4">
+      <tr>
+
+        <th >Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+
   <ul>
     {% for dish_type in dish_type_list %}
-    <li>
-      <a href="{% url 'restaurant_kitchen:dish-type-detail' pk=dish_type.id %}">
-        {{dish_type }}
-      </a>
-    </li>
+      <tr>
+        <td>
+          <a class="link" href="{% url 'restaurant_kitchen:dish-type-detail' pk=dish_type.id %}">
+            {{ dish_type.name }}
+          </a>
+        </td>
+        <td>
+          <a class="btn btn-primary"href="{% url 'restaurant_kitchen:dish-type-update' pk=dish_type.id %}">Update</a></td>
+        <td>
+          <a class="btn btn-danger" href="{% url 'restaurant_kitchen:dish-type-delete' pk=dish_type.id %}">Delete</a>
+        </td>
+      </tr>
+
     {% endfor %}
+    </table>
   </ul>
   {% else %}
     <p>The are no dish types in dish-type-list</p>
