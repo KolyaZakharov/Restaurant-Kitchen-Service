@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>{{ dishtype }}</h1>
+  <h1>
+    {{ dishtype }}
+    <a class="btn btn-primary" href="{% url 'restaurant_kitchen:dish-type-update' pk=dishtype.id %}">
+      update
+    </a>
+    <a class="btn btn-danger" href="{%  url 'restaurant_kitchen:dish-type-delete' pk=dishtype.id %}">
+      Delete
+    </a>
+  </h1>
     <div class="ml-4">
         {% for dish in dishtype.dish_set.all %}
           <ul>
             <li>
-              <a href="{% url 'restaurant_kitchen:dish-detail' pk=dish.id %}">{{ dish.name }}</a>
+              {{ dish.name }}
             </li>
           </ul>
         {% empty %}

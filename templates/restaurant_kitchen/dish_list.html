@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Dish list</h1>
+  <h1>
+    Dish list
+    <a class="btn btn-primary" href="{% url 'restaurant_kitchen:dish-create' %}">
+      Create
+    </a>
+  </h1>
   {% if dish_list %}
   <ul>
     {% for dish in dish_list %}

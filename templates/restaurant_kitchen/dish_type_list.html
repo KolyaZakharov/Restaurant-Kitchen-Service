@@ -6,36 +6,19 @@
       Create
     </a>
   </h1>
-
   {% if dish_type_list %}
-    <table class="table ml-4">
-      <tr>
-
-        <th >Name</th>
-        <th></th>
-        <th></th>
-      </tr>
-
-
-  <ul>
-    {% for dish_type in dish_type_list %}
-      <tr>
-        <td>
-          <a class="link" href="{% url 'restaurant_kitchen:dish-type-detail' pk=dish_type.id %}">
-            {{ dish_type.name }}
-          </a>
-        </td>
-        <td>
-          <a class="btn btn-primary"href="{% url 'restaurant_kitchen:dish-type-update' pk=dish_type.id %}">Update</a></td>
-        <td>
-          <a class="btn btn-danger" href="{% url 'restaurant_kitchen:dish-type-delete' pk=dish_type.id %}">Delete</a>
-        </td>
-      </tr>
-
+    {% for dishtype in dish_type_list %}
+        <ul>
+          <li>
+            <a href="{% url 'restaurant_kitchen:dish-type-detail' pk=dishtype.id %}">
+              {{ dishtype }}
+            </a>
+          </li>
+        </ul>
     {% endfor %}
-    </table>
-  </ul>
   {% else %}
-    <p>The are no dish types in dish-type-list</p>
+    <p>The are no types of dish </p>
   {% endif %}
+
+
 {% endblock %}

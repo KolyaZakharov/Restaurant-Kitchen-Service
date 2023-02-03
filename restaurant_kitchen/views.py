@@ -4,7 +4,14 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from restaurant_kitchen.models import Dish, DishType, Cook, Ingredient
+from restaurant_kitchen.forms import DishForm
+# from restaurant_kitchen.forms import DishTypeForm
+from restaurant_kitchen.models import (
+    Dish,
+    DishType,
+    Cook,
+    Ingredient,
+)
 
 
 @login_required
@@ -40,6 +47,26 @@ class DishDitailView(LoginRequiredMixin, generic.DetailView):
     )
 
 
+class DishCreateView(generic.CreateView):
+    model = Dish
+    template_name = "restaurant_kitchen/dish_form.html"
+    success_url = reverse_lazy("restaurant_kitchen:dish-list")
+    form_class = DishForm
+
+
+class DishUpdateView(generic.UpdateView):
+    model = Dish
+    template_name = "restaurant_kitchen/dish_form.html"
+    form_class = DishForm
+    # success_url = reverse_lazy("restaurant_kitchen:dish-list")
+
+
+class DishDeleteView(generic.DeleteView):
+    model = Dish
+    template_name = "restaurant_kitchen/dish_delete.html"
+    success_url = reverse_lazy("restaurant_kitchen:dish-list")
+
+
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
     template_name = "restaurant_kitchen/dish_type_list.html"
@@ -61,9 +88,9 @@ class DishTypeCreateView(generic.CreateView):
 
 class DishTypeUpdateView(generic.UpdateView):
     template_name = "restaurant_kitchen/dish_type_form.html"
+    success_url = reverse_lazy("restaurant_kitchen:dish-type-list")
     model = DishType
     fields = "__all__"
-    success_url = reverse_lazy("restaurant_kitchen:dish-type-list")
 
 
 class DishTypeDeleteView(generic.DeleteView):
