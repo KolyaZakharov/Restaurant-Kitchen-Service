@@ -6,6 +6,7 @@ from django.views import generic
 
 from restaurant_kitchen.models import Dish, DishType, Cook, Ingredient
 
+
 @login_required
 def index(request):
     num_dishes = Dish.objects.count()
@@ -71,10 +72,29 @@ class DishTypeDeleteView(generic.DeleteView):
     success_url = reverse_lazy("restaurant_kitchen:dish-type-list")
 
 
-
 class IngredientListView(LoginRequiredMixin, generic.ListView):
     model = Ingredient
     paginate_by = 15
+
+
+class IngredientCreateView(generic.CreateView):
+    fields = "__all__"
+    template_name = "restaurant_kitchen/ingredient_form.html"
+    model = Ingredient
+    success_url = reverse_lazy("restaurant_kitchen:ingredient-list")
+
+
+class IngredientUpdateView(generic.UpdateView):
+    fields = "__all__"
+    template_name = "restaurant_kitchen/ingredient_form.html"
+    model = Ingredient
+    success_url = reverse_lazy("restaurant_kitchen:ingredient-list")
+
+
+class IngredientDeleteView(generic.DeleteView):
+    template_name = "restaurant_kitchen/ingredient_delete.html"
+    model = Ingredient
+    success_url = reverse_lazy("restaurant_kitchen:ingredient-list")
 
 
 class CookListView(LoginRequiredMixin, generic.ListView):
