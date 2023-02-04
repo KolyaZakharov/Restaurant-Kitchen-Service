@@ -16,7 +16,7 @@ class DishForm(forms.ModelForm):
         fields = "__all__"
 
 
-class DishSearchForm(forms.Form):
+class SearchForm(forms.Form):
     name = forms.CharField(
         max_length=255,
         required=False,
@@ -43,3 +43,5 @@ class CookSearchForm(forms.Form):
         widget=forms.TextInput(attrs={"placeholder": "Search by username.."})
 
     )
+
+

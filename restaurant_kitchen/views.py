@@ -4,7 +4,12 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from restaurant_kitchen.forms import DishForm, CookForm, DishSearchForm, CookSearchForm
+from restaurant_kitchen.forms import (
+    DishForm,
+    CookForm,
+    CookSearchForm,
+    SearchForm,
+)
 
 from restaurant_kitchen.models import (
     Dish,
@@ -42,12 +47,12 @@ class DishListView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(DishListView, self).get_context_data(**kwargs)
 
-        context["search_form"] = DishSearchForm()
+        context["search_form"] = SearchForm()
 
         return context
 
     def get_queryset(self):
-        form = DishSearchForm(self.request.GET)
+        form = SearchForm(self.request.GET)
 
         if form.is_valid():
             return self.queryset.filter(
@@ -88,6 +93,23 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     template_name = "restaurant_kitchen/dish_type_list.html"
     context_object_name = "dish_type_list"
     paginate_by = 15
+    queryset = DishType.objects.all()
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(DishTypeListView, self).get_context_data(**kwargs)
+
+        context["search_form"] = SearchForm()
+
+        return context
+
+    def get_queryset(self):
+        form = SearchForm(self.request.GET)
+
+        if form.is_valid():
+            return self.queryset.filter(
+                name__icontains=form.cleaned_data["name"]
+            )
+        return self.queryset
 
 
 class DishTypeDetailView(LoginRequiredMixin, generic.DetailView):
@@ -119,6 +141,23 @@ class DishTypeDeleteView(generic.DeleteView):
 class IngredientListView(LoginRequiredMixin, generic.ListView):
     model = Ingredient
     paginate_by = 15
+    queryset = Ingredient.objects.all()
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(IngredientListView, self).get_context_data(**kwargs)
+
+        context["search_form"] = SearchForm()
+
+        return context
+
+    def get_queryset(self):
+        form = SearchForm(self.request.GET)
+
+        if form.is_valid():
+            return self.queryset.filter(
+                name__icontains=form.cleaned_data["name"]
+            )
+        return self.queryset
 
 
 class IngredientCreateView(generic.CreateView):
