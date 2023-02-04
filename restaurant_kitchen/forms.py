@@ -16,6 +16,15 @@ class DishForm(forms.ModelForm):
         fields = "__all__"
 
 
+class DishSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(attrs={"placeholder": "Search by name.." })
+    )
+
+
 class CookForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Cook
