@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from restaurant_kitchen.forms import DishForm
-# from restaurant_kitchen.forms import DishTypeForm
+from restaurant_kitchen.forms import DishForm, CookForm
+
 from restaurant_kitchen.models import (
     Dish,
     DishType,
@@ -58,7 +58,6 @@ class DishUpdateView(generic.UpdateView):
     model = Dish
     template_name = "restaurant_kitchen/dish_form.html"
     form_class = DishForm
-    # success_url = reverse_lazy("restaurant_kitchen:dish-list")
 
 
 class DishDeleteView(generic.DeleteView):
@@ -126,10 +125,27 @@ class IngredientDeleteView(generic.DeleteView):
 
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
-    queryset = Cook.objects.all().prefetch_related("dishes__dish_type")
 
 
 class CookDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
-    # queryset = Cook.objects.all().prefetch_related("dishes")
+    queryset = Cook.objects.all().prefetch_related("dishes__dish_type")
 
+
+class CookCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Cook
+    form_class = CookForm
+    template_name = "restaurant_kitchen/cook_form.html"
+    success_url = reverse_lazy("restaurant_kitchen:cook-list")
+
+
+class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Cook
+    form_class = CookForm
+    template_name = "restaurant_kitchen/cook_form.html"
+
+
+class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Cook
+    template_name = "restaurant_kitchen/cook_delete.html"
+    success_url = reverse_lazy("restaurant_kitchen:cook-list")

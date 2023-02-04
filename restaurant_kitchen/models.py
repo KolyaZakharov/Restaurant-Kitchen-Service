@@ -33,6 +33,9 @@ class Cook(AbstractUser):
     class Meta:
         ordering = ["username"]
 
+    def get_absolute_url(self):
+        return reverse("restaurant_kitchen:cook-detail", kwargs={"pk": self.pk})
+
 
 class Dish(models.Model):
     name = models.CharField(max_length=255)

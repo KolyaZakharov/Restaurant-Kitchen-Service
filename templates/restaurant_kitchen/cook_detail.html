@@ -2,7 +2,16 @@
 
 {% block content %}
   <h1>Cook</h1>
-  <p><strong>Username:</strong> {{ cook.username }}</p>
+  <p>
+    <strong>Username:</strong> {{ cook.username }}
+
+    <a class="btn btn-primary" href="{% url 'restaurant_kitchen:cook-update' pk=cook.id %}">
+      Update
+    </a>
+    <a class="btn btn-danger" href="{% url 'restaurant_kitchen:cook-delete' pk=cook.id %}">
+      Delete
+    </a>
+  </p>
   <p><strong>Full name:</strong> {{ cook.first_name }} {{ cook.last_name}}</p>
   <p><strong>Experience:</strong>{{ cook.years_of_experience }} years</p>
   <div class="ml-4">

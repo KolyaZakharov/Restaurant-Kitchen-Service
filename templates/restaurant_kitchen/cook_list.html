@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Cook list</h1>
+  <h1>
+    Cook list
+    <a class="btn btn-primary" href="{% url 'restaurant_kitchen:cook-create' %}">
+      Create
+    </a>
+  </h1>
   {% if cook_list %}
   <ul>
     {% for cook in cook_list %}
