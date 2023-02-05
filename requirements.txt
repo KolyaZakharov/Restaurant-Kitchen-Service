@@ -1,0 +1,8 @@
+django==4.1.5
+flake8==6.0.0
+flake8-quotes==3.3.2
+flake8-variables-names==0.0.5
+pep8-naming==0.13.3
+django-crispy-forms==1.14.0
+django_debug_toolbar==3.8.1
+black==22.12.0
