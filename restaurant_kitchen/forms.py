@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import ValidationError
 
 from restaurant_kitchen.models import Dish, Ingredient, Cook
 
@@ -34,6 +35,9 @@ class CookForm(UserCreationForm):
             "last_name",
         )
 
+    def clean_years_of_experience(self):
+        return validate_years_of_experience(self.cleaned_data["years_of_experience"])
+
 
 class CookSearchForm(forms.Form):
     username = forms.CharField(
@@ -44,4 +48,12 @@ class CookSearchForm(forms.Form):
 
     )
 
+
+def validate_years_of_experience(years_of_experience):
+    if type(years_of_experience) != int:
+        raise ValidationError("Experience must be integer")
+    elif years_of_experience < 1:
+        raise ValidationError("in our kitchen there cannot be workers without experience")
+
+    return years_of_experience
 
