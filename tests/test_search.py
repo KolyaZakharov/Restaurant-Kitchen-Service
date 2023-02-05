@@ -47,7 +47,9 @@ class SearchTest(TestCase):
                 price=2
             )
 
-        response = self.client.get(reverse("restaurant_kitchen:dish-list") + "?name=Carb")
+        response = self.client.get(
+            reverse("restaurant_kitchen:dish-list") + "?name=Carb"
+        )
         self.assertEqual(
             list(response.context["dish_list"]),
             list(Dish.objects.filter(name__icontains="Carbonara")),
@@ -59,14 +61,16 @@ class SearchTest(TestCase):
         for ingredient_num in range(self.NUM_OBJECTS):
             Ingredient.objects.create(name=f"Becon{ingredient_num}")
 
-        response = self.client.get(reverse("restaurant_kitchen:ingredient-list") + "?name=Becon")
+        response = self.client.get(
+            reverse("restaurant_kitchen:ingredient-list") + "?name=Becon"
+        )
         self.assertEqual(
             list(response.context["ingredient_list"]),
             list(Ingredient.objects.filter(name__icontains="Becon"))
         )
 
     def test_search_cook_by_username(self):
-        user1 = get_user_model().objects.create_user(
+        get_user_model().objects.create_user(
             username="Petro",
             years_of_experience=2
         )
@@ -83,5 +87,3 @@ class SearchTest(TestCase):
             list(response.context["cook_list"]),
             list(Cook.objects.filter(username__icontains="test")),
         )
-
-

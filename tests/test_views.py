@@ -38,4 +38,7 @@ class PrivateDishTypeFormatTests(TestCase):
             list(response.context["dish_type_list"]),
             list(dishtypes)
         )
-        self.assertTemplateUsed(response, "restaurant_kitchen/dish_type_list.html")
+        self.assertTemplateUsed(
+            response,
+            "restaurant_kitchen/dish_type_list.html"
+        )

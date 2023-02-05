@@ -41,6 +41,3 @@ class CookAdmin(UserAdmin):
             ),
         )
     )
-
-
-

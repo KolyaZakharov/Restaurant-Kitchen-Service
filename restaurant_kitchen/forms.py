@@ -22,7 +22,7 @@ class SearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Search by name.." })
+        widget=forms.TextInput(attrs={"placeholder": "Search by name.."})
     )
 
 
@@ -36,7 +36,9 @@ class CookForm(UserCreationForm):
         )
 
     def clean_years_of_experience(self):
-        return validate_years_of_experience(self.cleaned_data["years_of_experience"])
+        return validate_years_of_experience(
+            self.cleaned_data["years_of_experience"]
+        )
 
 
 class CookSearchForm(forms.Form):
@@ -53,7 +55,8 @@ def validate_years_of_experience(years_of_experience):
     if type(years_of_experience) != int:
         raise ValidationError("Experience must be integer")
     elif years_of_experience < 1:
-        raise ValidationError("in our kitchen there cannot be workers without experience")
+        raise ValidationError(
+            "in our kitchen there cannot be workers without experience"
+        )
 
     return years_of_experience
-

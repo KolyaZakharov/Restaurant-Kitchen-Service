@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "restaurant_kitchen",
     "debug_toolbar",
-    'crispy_forms',
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -81,7 +81,6 @@ WSGI_APPLICATION = "restaurant_kitchen_service.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
 
 
 DATABASES = {

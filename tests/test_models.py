@@ -45,11 +45,13 @@ class CookModelTest(TestCase):
         )
 
     def test_cook_str(self):
-        self.assertEqual(str(self.cook), "Testusername (Testfirstname Testlastname)")
+        self.assertEqual(
+            str(self.cook),
+            "Testusername (Testfirstname Testlastname)"
+        )
 
     def test_cook_get_absolute_url(self):
-        self.assertEqual(self.cook.get_absolute_url(), "/cook/1")
-
-
-
-
+        self.assertEqual(
+            self.cook.get_absolute_url(),
+            "/cook/1"
+        )

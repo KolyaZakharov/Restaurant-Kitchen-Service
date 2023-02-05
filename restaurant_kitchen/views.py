@@ -180,6 +180,7 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
     template_name = "restaurant_kitchen/cook_delete.html"
     success_url = reverse_lazy("restaurant_kitchen:cook-list")
 
+
 @login_required
 def toggle_assign_to_dish(request, pk):
     cook = Cook.objects.get(id=request.user.id)
@@ -189,4 +190,6 @@ def toggle_assign_to_dish(request, pk):
         cook.dishes.remove(pk)
     else:
         cook.dishes.add(pk)
-    return HttpResponseRedirect(reverse_lazy("restaurant_kitchen:dish-detail", args=[pk]))
+    return HttpResponseRedirect(
+        reverse_lazy("restaurant_kitchen:dish-detail", args=[pk])
+    )

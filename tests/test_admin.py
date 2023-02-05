@@ -25,7 +25,10 @@ class AdminSiteTests(TestCase):
         self.assertContains(res, self.cook.years_of_experience)
 
     def test_years_of_experience_detailed_listed(self):
-        url = reverse("admin:restaurant_kitchen_cook_change", args=[self.cook.id])
+        url = reverse(
+            "admin:restaurant_kitchen_cook_change",
+            args=[self.cook.id]
+        )
         res = self.client.get(url)
 
         self.assertContains(res, self.cook.years_of_experience)
