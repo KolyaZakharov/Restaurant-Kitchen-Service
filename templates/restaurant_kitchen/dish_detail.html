@@ -20,7 +20,19 @@
     </div>
   </p>
   <div class="ml-4">
-    <h3>Cooks</h3>
+    <h3>
+      Cooks
+      {% if dish in user.dishes.all %}
+      <a href="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-danger link-to-page">
+        Delete me from this dish
+      </a>
+    {% else %}
+      <a href="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-success link-to-page">
+        Assign me from this dish
+      </a>
+    {% endif %}
+    </h3>
+
     {% for cook in dish.cooks.all %}
       <hr>
       <p class="text-muted">

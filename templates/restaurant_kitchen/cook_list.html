@@ -15,9 +15,7 @@
   <ul>
     {% for cook in cook_list %}
     <li>
-      <a href="{% url 'restaurant_kitchen:cook-detail' pk=cook.id %}">
-        {{cook.username}}
-      </a>
+      <a href="{{ cook.get_absolute_url }}">{{ cook.username }} {% if user == cook %} (Me){% endif %}</a>
       ({{cook.first_name}} {{ cook.last_name }})
     </li>
     {% endfor %}
