@@ -2,25 +2,45 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>
-    Dish list
-    <a class="btn btn-primary" href="{% url 'restaurant_kitchen:dish-create' %}">
-      Create
-    </a>
-  </h1>
-  <div>
+<body class="list-content">
+<div class="container back-dishlist">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 head-text">
+        <h1 class="text-center">
+          Dish list
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
     {% include "includes/search_form.html" %}
   </div>
   {% if dish_list %}
   <ul>
     {% for dish in dish_list %}
     <li>
-      <a href="{% url 'restaurant_kitchen:dish-detail' pk=dish.id %}">{{dish.name}}</a>
-      (price:{{dish.price}} type: {{ dish.dish_type }})
+      <p>
+       <strong>
+         <a class="link-zkh" href="{% url 'restaurant_kitchen:dish-detail' pk=dish.id %}">{{dish.name}}</a>
+       </strong>
+      (price:{{dish.price}} type: {{ dish.dish_type }}
+      </p>
     </li>
     {% endfor %}
   </ul>
   {% else %}
     <p>The are no dish in dish-list</p>
   {% endif %}
+  <p>
+    <a class="btn btn-itd" href="{% url 'restaurant_kitchen:dish-create' %}">
+     Add new dish
+    </a>
+  </p>
+</div>
+
+</body>
+
+
 {% endblock %}

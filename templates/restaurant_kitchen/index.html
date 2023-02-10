@@ -1,12 +1,128 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
-  <h1>Kitchen home</h1>
-    <p>Welcome to the convenient site of the kitchen staff</p>
-    <h3>Kitchen content</h3>
-    <ul>
-      <li>Num cooks: {{ num_cooks }}</li>
-      <li>Num dish types: {{ num_dish_types }} </li>
-      <li>Num dishes: {{ num_dishes }}</li>
-      <li>Num ingredients: {{ num_ingredients }}</li>
-    </ul>
+<div class="wrapper">
+  <div>
+    <header >
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid ">
+          <a class="navbar-brand "><img src="{% static 'img/logo2.png' %}" alt="logo" height="56px"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+          aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <strong>
+            <a class="nav-link active text-white btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:index' %}">Home</a>
+          </strong>
+          <div class="collapse navbar-collapse justify-content-center " id="navbarID">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <strong>
+                    <a class="nav-link active text-white btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:cook-list' %}">Our Cooks</a>
+                  </strong>
+                </li>
+                <li class="nav-item active">
+                  <strong>
+                    <a class="nav-link active text-white btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:dish-list' %}">Dishes</a>
+                  </strong>
+                </li>
+                <li class="nav-item active">
+                  <strong>
+                    <a class="nav-link active text-white btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:dish-type-list' %}">Types of dish</a>
+                  </strong>
+                </li>
+                <li class="nav-item active">
+                  <strong>
+                    <a class="nav-link active text-white btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:ingredient-list' %}">Ingredients</a>
+                  </strong>
+                </li>
+              </ul>
+          </div>
+          {% if user.is_authenticated %}
+            <strong>
+              <a class="nav-link active btn-zkh nav__link text-white" href="{{ user.get_absolute_url }}">Username:{{ user.get_username }}</a>
+            </strong>
+          {% endif %}
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 head-text">
+          <h1 class="text-center text-white">Kitchen</h1>
+          <br>
+          <h3 class="text-center text-white">Welcome to the app for kitchen workers</h3>
+          <br>
+          <h4 class="text-white text-center">
+            {% if user.is_authenticated %}
+                <p>You are logged in as: <ahref="{{ user.get_absolute_url }}">{{ user.get_username }}</a></p>
+                <p><a class="btn btn-itd" href="{% url 'logout'%}?next={{request.path}}">Logout</a></p
+
+            {% else %}
+               <div>
+                <a href="{% url 'login' %}?next={{request.path}}" class="btn btn-itd btn-lg text-uppercase">Login</a>
+               </div>
+            {% endif %}
+          </h4>
+
+
+        </div>
+      </div>
+    </div>
+  </header>
+  </div>
+  <div class="content">
+    <section class="about">
+    <div class="container">
+        <div class="row">
+          <div class="col-xl-3 col-md-6 col-sm-12">
+            <div class="itd_circle"><div class="num">{{ num_cooks }}</div></div>
+            <h5 class="text-center">Сooks</h5>
+            <div class="line"></div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-sm-12">
+            <div class="itd_circle"><div class="num">{{ num_dishes }}</div></div>
+            <h5 class="text-center">All Dishes</h5>
+            <div class="line"></div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-sm-12">
+            <div class="itd_circle"><div class="num">{{ num_dish_types }}</div></div>
+            <h5 class="text-center">Types of dish</h5>
+            <div class="line"></div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-sm-12">
+            <div class="itd_circle"><div class="num">{{ num_ingredients }}</div></div>
+            <h5 class="text-center">Ingredients</h5>
+            <div class="line"></div>
+          </div>
+        </div>
+
+    </div>
+  </section>
+    <section class="forwhom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center text-uppercase color2 mb-5"> here you can</h2>
+        </div>
+      </div>
+      <div class="row mb-5">
+        <div class="col-md-6 col-sm-12">
+          <h5 class="text-center">view all dishes and their types in our kitchen</h5>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h5 class="text-center">manage the assignment of dishes to cooks</h5>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h5 class="text-center">check ingredients for cooking</h5>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h5 class="text-center">remove irrelevant dishes or add new ones</h5>
+        </div>
+      </div>
+  </section>
+  </div>
+</div>
 {% endblock %}
+{% block sidebar %}
+{% endblock %}
+

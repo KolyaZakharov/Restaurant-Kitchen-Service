@@ -1,16 +1,63 @@
-<ul class="sidebar-nav list-group">
+{#<ul class="sidebar-nav list-group">#}
+{##}
+{#  {% if user.is_authenticated %}#}
+{#    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>#}
+{#    <li class="list-group-item"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>#}
+{#  {% else %}#}
+{#    <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>#}
+{#  {% endif %}#}
+{#  <br>#}
+{##}
+{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:index' %}">Home</a></li>#}
+{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:cook-list' %}">All cooks</a></li>#}
+{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:dish-list' %}">All dishes</a></li>#}
+{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:dish-type-list' %}">Types of dish</a></li>#}
+{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:ingredient-list' %}">All ingredients</a></li>#}
+{#</ul>#}
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light navbar2">
+      <div class="container-fluid ">
+          <a class="navbar-brand "><img src="{% static 'img/logo.png' %}" alt="logo" height="56px"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+          aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <strong>
+            <a class="nav-link active btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:index' %}">Home</a>
+          </strong>
+          <div class="collapse navbar-collapse justify-content-center " id="navbarID">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <strong>
+                    <a class="nav-link active  btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:cook-list' %}">Our Cooks</a>
+                  </strong>
+                </li>
+                <li class="nav-item active">
+                  <strong>
+                    <a class="nav-link active  btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:dish-list' %}">Dishes</a>
+                  </strong>
+                </li>
+                <li class="nav-item active">
+                  <strong>
+                    <a class="nav-link active  btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:dish-type-list' %}">Types of dish</a>
+                  </strong>
+                </li>
+                <li class="nav-item active">
+                  <strong>
+                    <a class="nav-link active  btn-zkh nav__link" aria-current="page" href="{% url 'restaurant_kitchen:ingredient-list' %}">Ingedients</a>
+                  </strong>
+                </li>
 
-  {% if user.is_authenticated %}
-    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
-    <li class="list-group-item"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-  {% else %}
-    <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-  {% endif %}
-  <br>
+              </ul>
+          </div>
+          {% if user.is_authenticated %}
+            <strong>
+              <a class="nav-link active btn-zkh nav__link" href="{{ user.get_absolute_url }}">
+                Username:{{ user.get_username }}
+                <a class="link-zkh" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+              </a>
 
-  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:index' %}">Home</a></li>
-  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:cook-list' %}">All cooks</a></li>
-  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:dish-list' %}">All dishes</a></li>
-  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:dish-type-list' %}">Types of dish</a></li>
-  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:ingredient-list' %}">All ingredients</a></li>
-</ul>
+            </strong>
+          {% endif %}
+      </div>
+    </nav>

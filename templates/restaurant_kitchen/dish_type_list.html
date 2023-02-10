@@ -2,27 +2,43 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>Dish type list
-    <a href="{% url 'restaurant_kitchen:dish-type-create' %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
-  </h1>
-  <div>
-    {% include "includes/search_form.html" %}
-  </div>
-  {% if dish_type_list %}
-    {% for dishtype in dish_type_list %}
-        <ul>
-          <li>
-            <a href="{% url 'restaurant_kitchen:dish-type-detail' pk=dishtype.id %}">
-              {{ dishtype }}
-            </a>
-          </li>
-        </ul>
-    {% endfor %}
-  {% else %}
-    <p>The are no types of dish </p>
-  {% endif %}
+  <body class="list-content">
+    <div class="container back-dish-typelist">
+      <div class="conteiner">
+       <div class="row">
+        <div class="col-12 head-text">
+          <h1 class="text-center">Dish type list</h1>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      {% include "includes/search_form.html" %}
+    </div>
+    {% if dish_type_list %}
+      {% for dishtype in dish_type_list %}
+          <ul>
+            <li>
+              <strong>
+                <a class="link-zkh" href="{% url 'restaurant_kitchen:dish-type-detail' pk=dishtype.id %}">
+                {{ dishtype }}
+                </a>
+              </strong>
+
+            </li>
+          </ul>
+      {% endfor %}
+    {% else %}
+      <p>The are no types of dish </p>
+    {% endif %}
+        <div class="container-zkh">
+          <a class="btn btn-itd" href="{% url 'restaurant_kitchen:dish-type-create' %}">
+          Add new dish type
+          </a>
+        </div>
+
+    </div>
+  </body>
 
 
 {% endblock %}

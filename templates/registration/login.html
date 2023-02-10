@@ -2,23 +2,29 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
+  <body class="login-wrapper">
+    <div class="container-zkh ">
 
-{% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
-
-<h1>Login</h1>
-
-{% if next %}
-  <p>Please login to see this page.</p>
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-
-  <input type="submit" value="Login" class="btn btn-primary" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
-
+    <div class="row">
+     <div class="form col-3 pt-5">
+       {% if form.errors %}
+         <p>Your username and password didn't match. Please try again.</p>
+       {% endif %}
+      <h1>Login</h1>
+      {% if next %}
+        <p>Please login to see this page.</p>
+      {% endif %}
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Login" class="btn btn-itd2" />
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+    </div>
+    <div class="col-9 back-login"></div>
+    </div>
+    </div>
+  </body>
+{% endblock %}
+{% block sidebar %}
 {% endblock %}

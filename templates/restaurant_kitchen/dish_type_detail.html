@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>
+  <body class="list-content">
+  <div class="container-fluid container-zkh">
+    <h1>
     {{ dishtype }}
-    <a class="btn btn-primary" href="{% url 'restaurant_kitchen:dish-type-update' pk=dishtype.id %}">
+    <a class="btn btn-itd2" href="{% url 'restaurant_kitchen:dish-type-update' pk=dishtype.id %}">
       update
     </a>
-    <a class="btn btn-danger" href="{%  url 'restaurant_kitchen:dish-type-delete' pk=dishtype.id %}">
+    <a class="btn btn-dark" href="{%  url 'restaurant_kitchen:dish-type-delete' pk=dishtype.id %}">
       Delete
     </a>
   </h1>
@@ -14,7 +16,7 @@
         {% for dish in dishtype.dish_set.all %}
           <ul>
             <li>
-              {{ dish.name }}
+              <a class="link-zkh" href="{% url 'restaurant_kitchen:dish-detail' pk=dish.id %}">{{ dish.name }}</a>
             </li>
           </ul>
         {% empty %}
@@ -22,4 +24,8 @@
         {% endfor %}
 
     </div>
+  </div>
+
+  </body>
+
 {% endblock %}

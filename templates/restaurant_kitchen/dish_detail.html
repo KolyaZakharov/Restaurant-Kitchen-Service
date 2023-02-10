@@ -1,56 +1,72 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>
-    {{ dish.name }}
-    <a class="btn btn-primary" href="{% url 'restaurant_kitchen:dish-update' pk=dish.id %}">
-      Update
-    </a>
-    <a  class="btn btn-danger"href="{% url 'restaurant_kitchen:dish-delete' pk=dish.id %}">
-      Delete
-    </a>
-  </h1>
-  <p><strong>Price: </strong>{{ dish.price }}</p>
-  <p><strong>Type of dish: </strong>{{ dish.dish_type }}</p>
-  <p>
-    <strong>Description: </strong>
-    <br>
-    <div>
-      {{ dish.description }}
-    </div>
-  </p>
-  <div class="ml-4">
-    <h3>
-      Cooks
-      {% if dish in user.dishes.all %}
-      <a href="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-danger link-to-page">
-        Delete me from this dish
+  <body class="list-content ">
+    <div class="container-fluid container-zkh ">
+      <h1 class="">
+      {{ dish.name }}
+      <a class="btn btn-itd2" href="{% url 'restaurant_kitchen:dish-update' pk=dish.id %}">
+        Update
       </a>
-    {% else %}
-      <a href="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-success link-to-page">
-        Assign me from this dish
+      <a  class="btn btn-dark"href="{% url 'restaurant_kitchen:dish-delete' pk=dish.id %}">
+        Delete
       </a>
-    {% endif %}
-    </h3>
+    </h1>
+    <p><strong>Price: </strong>{{ dish.price }}</p>
+    <p><strong>Type of dish: </strong>{{ dish.dish_type }}</p>
+    <p>
+      <strong>Description: </strong>
+      <br>
+      <div>
+        {{ dish.description }}
+      </div>
+    </p>
+    <div class="ml-4">
+      <h3>
+        Cooks
+        {% if dish in user.dishes.all %}
+        <a href="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-itd2 link-to-page">
+          Delete me from this dish
+        </a>
+      {% else %}
+        <a href="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-itd2 link-to-page">
+          Assign me from this dish
+        </a>
+      {% endif %}
+      </h3>
 
-    {% for cook in dish.cooks.all %}
-      <hr>
-      <p class="text-muted">
-        <strong>Full name: </strong>{{cook.first_name}} {{ cook.last_name }}
-      </p>
-      <p class="text-muted">
-        <strong>Experience:</strong> {{ cook.years_of_experience }} years
-      </p>
-    {% empty %}
-      <p>No chef has been assigned to this dish yet</p>
-    {% endfor %}
-    <h3>Ingredients</h3>
-    <ul>
-      {% for ingredient in dish.ingredients.all %}
-        <li class="text-muted">{{ingredient}}</li>
+      {% for cook in dish.cooks.all %}
+        <hr>
+{#        <div class="items">#}
+{#           <p class="text-white">#}
+{#            <strong>{{cook.first_name}} {{ cook.last_name }} </strong>#}
+{#          </p>#}
+{#          <p class="text-white">#}
+{#            <strong>Experience:</strong> {{ cook.years_of_experience }} years#}
+{#          </p>#}
+{#        </div>#}
+        <div class="row mb-4 forwhom2">
+          <div class="col-md-6 col-sm-12">
+            <h5 class="text-left">
+              <p><a class="link-zkh" href="{% url 'restaurant_kitchen:cook-detail' pk=cook.id %}">{{cook.first_name}} {{ cook.last_name }}</a> </p>
+              <p class="text-zkh"><strong>Experience:</strong> {{ cook.years_of_experience }} years</p>
+              <br>
+            </h5>
+
+          </div>
+        </div>
+      {% empty %}
+        <p>No chef has been assigned to this dish yet</p>
       {% endfor %}
-    </ul>
+      <h3>Ingredients</h3>
+      <ul>
+        {% for ingredient in dish.ingredients.all %}
+          <strong><li class="text-zkh">{{ingredient}}</li></strong>
+        {% endfor %}
+      </ul>
 
-  </div>
+    </div>
+    </div>
 
+  </body>
 {% endblock %}

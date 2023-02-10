@@ -1,0 +1,224 @@
+:root{
+  /* #009154 */
+  --color2:#009154;
+  --color3:#f16f5c;
+  --color1:#f6290c ;
+  --color4:#f02f17;
+  --color5:#777777;
+  --color6: #77777700;
+}
+ section {
+  padding: 50px 0;
+}
+header{
+  padding-bottom: 50px;
+}
+
+
+header{
+
+  background: url(../img/pattern5.png);
+  background-size: contain ;
+}
+
+.wrapper {
+  background: linear-gradient(to bottom, var(--color2), var(--color6));
+}
+
+.head-text{
+  margin-top: 150px;
+}
+
+.btn-itd{
+  display: block;
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 8px 30px;
+  color: var(--bs-white);
+  background-color: var(--color2);
+}
+.btn-itd2{
+  display: inline;
+  justify-content: flex-end;
+  max-width: 200px;
+  margin: 0 auto;
+  margin-right: 10px;
+  padding: 8px 30px;
+  color: var(--bs-white);
+  background-color: var(--color2);
+
+}
+.btn-itd:hover{
+  color: var(--bs-white);
+  background-color: var(--color5);
+}
+.btn-itd2:hover{
+  color: var(--bs-white);
+  background-color: var(--color5);
+}
+/*about*/
+.content {
+  background-color: var(--color6);
+  padding-top: 30px;
+}
+
+.about i {
+  font-size: 25px;
+  color: var(--color2);
+}
+.num{
+  font-size: 25px;
+  color: var(--color2);
+}
+.itd_circle{
+  margin: 0 auto 15px;
+  width: 70px;
+  height: 70px;
+  border: 3px solid var(--color2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line{
+  width: 100px;
+  height: 3px;
+  background-color: var(--color2);
+  margin: 15px auto 30px;
+}
+/* Here you can */
+.forwhom h5{
+  padding: 50px;
+  border: 3px solid var(--color2);
+}
+.forwhom2 h5 {
+  padding: 15px 0 15px 15px;
+  border: 3px solid var(--color2);
+}
+/* navbar */
+.navbar{
+  box-shadow: 0 6px 10px var(--color5);
+  border: 1px solid black;
+
+}
+
+.navbar2{
+  background-color: var(--color6);
+  box-shadow: 0 6px 30px var(--color2);
+}
+
+.navbar .container{
+
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-zkh{
+  margin-left: 25px;
+}
+.nav__link {
+    display: inline-block;
+    margin: 0 20px;
+    color: black;
+    text-decoration: none;
+    padding:6px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+.nav__link:hover{
+    background-color:var(--color2);
+}
+
+/* color */
+.color2{
+  color: var(--color2);
+}
+.color6{
+  color: var(--color6);
+}
+.bg6{
+  background-color: var(--color6);
+}
+.bg2{
+background-color: var(--color2)
+}
+
+/*lists*/
+.list-content{
+  background-color: var(--color6);
+  height: max-content;
+}
+
+
+
+footer{
+
+  background:  url(../img/pattern5.png), linear-gradient(0deg, var(--color2), var(--color6));
+  /*box-shadow: 0 6px 30px var(--color2);*/
+  background-size: contain;
+  padding: 50px;
+}
+/*backgroun for list pages*/
+
+.back-cooklist{
+  background: url(../img/cook_back.png);
+  background-repeat: no-repeat;
+  background-position: bottom, right;
+  height: 100%;
+}
+
+.back-dishlist{
+  background: url(../img/dish_back.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.back-dish-typelist{
+  background: url(../img/dish_type_back.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+ }
+.back-ingredientlist{
+    background: url(../img/ingredient-back.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+/*detail*/
+.detail-content{
+  padding: 15px;
+  border-bottom: 2px groove var(--color2);
+
+}
+.items{
+  max-width: 300px;
+  background-color: var(--color2);
+  padding: 35px;
+  margin: 15px;
+  border-radius: 50% 20% / 10% 40%;
+  box-shadow: 0 6px 30px var(--color2);
+}
+.container-zkh{
+  margin: 20px;
+}
+
+.wrapper div{
+  color: var(--color2);
+}
+
+.link-zkh{
+  color: var(--color2);
+}
+.text-zkh{
+  color: var(--color2);
+}
+
+/*login page*/
+.back-login{
+  padding: 600px 400px 50px 200px;
+  background-size: auto;
+  background: url("../img/login back.png") no-repeat center;
+}
+.login-wrapper{
+  background: linear-gradient(to left, var(--color2), var(--color6))
+}
