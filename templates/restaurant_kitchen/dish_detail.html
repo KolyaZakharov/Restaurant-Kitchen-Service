@@ -21,7 +21,14 @@
         {{ dish.description }}
       </div>
     </p>
+    <h3>Ingredients</h3>
+    <ul>
+        {% for ingredient in dish.ingredients.all %}
+          <strong><li class="text-zkh">{{ingredient}}</li></strong>
+        {% endfor %}
+      </ul>
     <div class="ml-4">
+      <hr>
       <h3>
         Cooks
         {% if dish in user.dishes.all %}
@@ -34,17 +41,10 @@
         </a>
       {% endif %}
       </h3>
-
+      <br>
+      <br>
       {% for cook in dish.cooks.all %}
-        <hr>
-{#        <div class="items">#}
-{#           <p class="text-white">#}
-{#            <strong>{{cook.first_name}} {{ cook.last_name }} </strong>#}
-{#          </p>#}
-{#          <p class="text-white">#}
-{#            <strong>Experience:</strong> {{ cook.years_of_experience }} years#}
-{#          </p>#}
-{#        </div>#}
+
         <div class="row mb-4 forwhom2">
           <div class="col-md-6 col-sm-12">
             <h5 class="text-left">
@@ -58,12 +58,8 @@
       {% empty %}
         <p>No chef has been assigned to this dish yet</p>
       {% endfor %}
-      <h3>Ingredients</h3>
-      <ul>
-        {% for ingredient in dish.ingredients.all %}
-          <strong><li class="text-zkh">{{ingredient}}</li></strong>
-        {% endfor %}
-      </ul>
+
+
 
     </div>
     </div>

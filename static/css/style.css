@@ -37,17 +37,25 @@ header{
   color: var(--bs-white);
   background-color: var(--color2);
 }
-.btn-itd2{
+.btn-itd2 {
   display: inline;
   justify-content: flex-end;
   max-width: 200px;
-  margin: 0 auto;
-  margin-right: 10px;
+  margin: 0 10px 0 auto;
   padding: 8px 30px;
   color: var(--bs-white);
   background-color: var(--color2);
-
 }
+.btn-item-itd2{
+  display: inline;
+  justify-content: flex-end;
+  max-width: 200px;
+  margin: 0 10px 0 auto;
+  padding: 8px 30px;
+  color: var(--bs-white);
+  background-color: var(--color5);
+}
+
 .btn-itd:hover{
   color: var(--bs-white);
   background-color: var(--color5);
@@ -61,10 +69,14 @@ header{
   background-color: var(--color6);
   padding-top: 30px;
 }
-
+.i {
+  font-size: 25px;
+  color: var(--color2);
+}
 .about i {
   font-size: 25px;
   color: var(--color2);
+  height: 25px;
 }
 .num{
   font-size: 25px;
@@ -108,7 +120,6 @@ header{
 }
 
 .navbar .container{
-
   height: inherit;
   display: flex;
   justify-content: space-between;
@@ -145,19 +156,11 @@ background-color: var(--color2)
 }
 
 /*lists*/
-.list-content{
-  background-color: var(--color6);
-  height: max-content;
-}
-
-
 
 footer{
-
   background:  url(../img/pattern5.png), linear-gradient(0deg, var(--color2), var(--color6));
-  /*box-shadow: 0 6px 30px var(--color2);*/
   background-size: contain;
-  padding: 50px;
+  padding: 35px;
 }
 /*backgroun for list pages*/
 
@@ -221,4 +224,9 @@ footer{
 }
 .login-wrapper{
   background: linear-gradient(to left, var(--color2), var(--color6))
+}
+
+.list-content{
+  height: max-content;
+  background: var(--color6);
 }
