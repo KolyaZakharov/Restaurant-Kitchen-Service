@@ -24,6 +24,7 @@ A quick introduction of the minimal setup you need
 - python -m venv venv
 - venv\Scripts\activate
 - pip install -r requirements.txt
+- copy .env.sample -> .env and populate with all required data
 - python manage.py migrate
 - python manage.py runserver
 
