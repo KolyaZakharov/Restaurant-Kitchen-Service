@@ -25,6 +25,8 @@ A quick introduction of the minimal setup you need
 - venv\Scripts\activate
 - pip install -r requirements.txt
 - copy .env.sample -> .env and populate with all required data
+  (SECRET_KEY - It's a django secret key used for hashing
+etc.)
 - python manage.py migrate
 - python manage.py runserver
 
