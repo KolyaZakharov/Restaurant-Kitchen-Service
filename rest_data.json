@@ -1,0 +1,833 @@
+[
+{
+  "model": "restaurant_kitchen.cook",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$ucPYoA1qhCD6BkE1EUDDE8$v0NNnXwN2FnVpE2oA01WleFoPYeRFoWwmObU1OZeN4M=",
+    "last_login": "2023-02-11T14:15:20.279Z",
+    "is_superuser": true,
+    "username": "Kolya",
+    "first_name": "Mykola",
+    "last_name": "Zakharov",
+    "email": "kolyazakharov94@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-01-29T19:10:39Z",
+    "years_of_experience": 1,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant_kitchen.cook",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$ihHRVo4AhsudFb5Eczup9u$3qNHXrAn3KdatUuCeAKnLS3hhfz7Jl+hZi9+2l2Jg08=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "RomanKa",
+    "first_name": "Roman",
+    "last_name": "Kashtalyan",
+    "email": "romankashtalyan@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-01-30T20:16:53Z",
+    "years_of_experience": 2,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant_kitchen.cook",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$7FgsHSoNfavg7n59OAD2ry$bH3y3UhUy1fEtw42hviDvN2cjZYy77Y1Hxm2kklp5Fg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "VladLev",
+    "first_name": "Vladislav",
+    "last_name": "Levishko",
+    "email": "vladlevsia@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-01-30T20:17:55Z",
+    "years_of_experience": 1,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant_kitchen.cook",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$qmZjhg3GAMAxcMD1wD1jPK$PNX03dEBzPhQtcscR4YEqopbT1+TYxgYxSd6wxlT3VA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "SylyaevK",
+    "first_name": "Mykola",
+    "last_name": "Sylyaev",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-02-01T15:31:09.820Z",
+    "years_of_experience": 4,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant_kitchen.cook",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$AU6HEyb3I7bcrHxUPRyD8g$Gh10Vgp971BSONMyzXnXzhYkxA+E1siTIZZylXr3V6g=",
+    "last_login": "2023-02-05T20:59:54.180Z",
+    "is_superuser": false,
+    "username": "KDarina",
+    "first_name": "Darina",
+    "last_name": "Kozik",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-02-01T15:32:35Z",
+    "years_of_experience": 1,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant_kitchen.cook",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$WXvAvNmN7C75NDSoysQ5kp$zAUCTASZqToFeogZkkhGEIxLaXkd5ifd7hSuKna7BF8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "DmytroNagaicev1",
+    "first_name": "Dmytro",
+    "last_name": "Nagaicev",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-02-04T16:19:51.065Z",
+    "years_of_experience": 4,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant_kitchen.cook",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$zqEewy6QwqxsPOvLmKjUY2$DG6g/gcywBCVFGH5Kd7lcXwY1oYFbFKsdhkeEmNGDbo=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@kitchen.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-02-13T13:01:06.136Z",
+    "years_of_experience": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 4,
+  "fields": {
+    "name": "Carbonara",
+    "description": "Pasta carbonara is the most popular Italian pasta in the world. The secret of its popularity is not only in the availability of ingredients and cooking time. The main thing is the unique taste - creamy and delicate, although real carbonara pasta is prepared without cream. It is important to follow the cooking recipe in order to get the right sauce.",
+    "price": "12.00",
+    "dish_type": 1,
+    "cooks": [
+      5,
+      1,
+      2
+    ],
+    "ingredients": [
+      1,
+      15,
+      13,
+      29,
+      10,
+      5,
+      3,
+      11
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 5,
+  "fields": {
+    "name": "Rome bucattini",
+    "description": "Translated from Italian, \"bucato\" means full of holes. This long paste looks like a straw. The ideal sauce for bucatini is Amatriciana with loin and tomatoes. Although with other sauces it is no less tasty.",
+    "price": "14.00",
+    "dish_type": 1,
+    "cooks": [
+      1
+    ],
+    "ingredients": [
+      1,
+      13,
+      12,
+      4,
+      3,
+      11,
+      2
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 10,
+  "fields": {
+    "name": "Bolognese",
+    "description": "Perhaps the most famous Italian dish in the world is pasta with Bolognese sauce. Made with durum wheat pasta cooked with a delicious sauce based on tomatoes, ground beef and red wine. The sauce for this dish comes from Bologna, the city that is the unofficial gastronomic capital of Italy. That's why it's called Bolognese. The dish is very easy to prepare, which is why Italians adore it so much.",
+    "price": "14.00",
+    "dish_type": 1,
+    "cooks": [
+      9
+    ],
+    "ingredients": [
+      14,
+      31,
+      18,
+      17,
+      15,
+      25,
+      29,
+      10,
+      12,
+      4,
+      3,
+      2,
+      32
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 11,
+  "fields": {
+    "name": "Margarita",
+    "description": "The archetype of a thin-crust pizza pie, a pizza margherita adorned simply in the colors of the Italian flag: green from basil, white from mozzarella, red from tomato sauce. This pizza is adapted from the recipe used by the staff at Roberta’s restaurant in Brooklyn, who make their tomato sauce simply by whizzing together canned tomatoes, a drizzle of olive oil and a pinch of salt.",
+    "price": "7.00",
+    "dish_type": 17,
+    "cooks": [
+      2
+    ],
+    "ingredients": [
+      6,
+      1,
+      10,
+      33,
+      2,
+      34
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 12,
+  "fields": {
+    "name": "Paperoni",
+    "description": "The classic composition of pizza in which there is nothing superfluous: spicy pepperoni sausages with light peppercorns, mozzarella cheese with a creamy taste and delicate tomato sauce. Pizza base on traditional thin Italian dough with spicy tomato sauce for pizza, which we cook with Italian herbs and spices.",
+    "price": "8.00",
+    "dish_type": 17,
+    "cooks": [
+      3
+    ],
+    "ingredients": [
+      6,
+      1,
+      36,
+      13,
+      10,
+      37,
+      4,
+      33,
+      3,
+      35,
+      30,
+      2
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 13,
+  "fields": {
+    "name": "Spicy pizza with steak",
+    "description": "Spicy pizza with steak is made from seasoned handmade puff pastry with selected meat. In terms of spiciness, it is a bit like the famous Diabola pizza. The Italians make Diabola with salami and Calabrian pepper, a type of local chili that we used in our recipe, replacing sausage with ribeye. An indispensable ingredient in almost any such baking is cheese.",
+    "price": "10.00",
+    "dish_type": 17,
+    "cooks": [
+      4
+    ],
+    "ingredients": [
+      39,
+      9,
+      1,
+      10,
+      4,
+      38,
+      3,
+      34
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 14,
+  "fields": {
+    "name": "Pizza with peaches, cheese and balsamic",
+    "description": "We suspect that pizza with peaches, cheese and balsamic will definitely appeal to fans of a similar combination of smoked pear and gorgonzola. Fruits and cheeses really seem to be made for each other. Here they are united by a tart sauce woven from balsamic vinegar and honey. Strictly speaking, for pizza you will need not only cheese, but also curd cheese (here it replaces the traditional tomato sauce for pizza) and grated hard cheese, which completes the composition",
+    "price": "8.99",
+    "dish_type": 17,
+    "cooks": [
+      9
+    ],
+    "ingredients": [
+      6,
+      1,
+      25,
+      13,
+      10,
+      40,
+      4,
+      33,
+      3,
+      28
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 15,
+  "fields": {
+    "name": "Pizza Tarantella",
+    "description": "Naples is considered the birthplace of pizza, from there it gradually spread throughout Italy, and eventually gained fame throughout Europe, and then around the world.",
+    "price": "7.00",
+    "dish_type": 17,
+    "cooks": [
+      9
+    ],
+    "ingredients": [
+      41,
+      1,
+      42,
+      44,
+      10,
+      4,
+      35,
+      43,
+      34
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 16,
+  "fields": {
+    "name": "Dry porcini mushroom soup",
+    "description": "This wonderful, fragrant cream soup made from dried porcini mushrooms will especially appeal to all lovers of thick soups. .",
+    "price": "10.00",
+    "dish_type": 18,
+    "cooks": [
+      9
+    ],
+    "ingredients": [
+      25,
+      10,
+      4,
+      20,
+      3,
+      45
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 17,
+  "fields": {
+    "name": "Solyanka",
+    "description": "Classic hodgepodge soup will go perfectly on the second or third day of the holiday - when people want something hot instead of boring salads. Do you feel the strength to fulfill this wish? The broth requires unhurried thoughtful preparation and the right set of meat on the bone.",
+    "price": "5.00",
+    "dish_type": 18,
+    "cooks": [
+      1
+    ],
+    "ingredients": [
+      14,
+      31,
+      41,
+      47,
+      42,
+      48,
+      12,
+      4,
+      3,
+      46,
+      35,
+      49
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dish",
+  "pk": 18,
+  "fields": {
+    "name": "Pork soup",
+    "description": "Soup kharcho with pork is a later version of this dish, in the same Georgia, it is a family food, it is prepared even with chicken, so we can quite afford pork. In all other respects, the recipe is close to the classic one: it includes nuts, hot pepper, and tkemali sauce. Kharcho soup turns out to be very filling, tasty, unusually appetizing.",
+    "price": "7.00",
+    "dish_type": 18,
+    "cooks": [
+      2
+    ],
+    "ingredients": [
+      18,
+      36,
+      52,
+      13,
+      10,
+      53,
+      4,
+      50,
+      55,
+      56,
+      2,
+      54,
+      51
+    ]
+  }
+},
+{
+  "model": "restaurant_kitchen.dishtype",
+  "pk": 1,
+  "fields": {
+    "name": "Pasta"
+  }
+},
+{
+  "model": "restaurant_kitchen.dishtype",
+  "pk": 6,
+  "fields": {
+    "name": "Steak"
+  }
+},
+{
+  "model": "restaurant_kitchen.dishtype",
+  "pk": 12,
+  "fields": {
+    "name": "Drinks"
+  }
+},
+{
+  "model": "restaurant_kitchen.dishtype",
+  "pk": 15,
+  "fields": {
+    "name": "Cake"
+  }
+},
+{
+  "model": "restaurant_kitchen.dishtype",
+  "pk": 16,
+  "fields": {
+    "name": "Dessert"
+  }
+},
+{
+  "model": "restaurant_kitchen.dishtype",
+  "pk": 17,
+  "fields": {
+    "name": "Pizza"
+  }
+},
+{
+  "model": "restaurant_kitchen.dishtype",
+  "pk": 18,
+  "fields": {
+    "name": "Soup"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 1,
+  "fields": {
+    "name": "chease"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 2,
+  "fields": {
+    "name": "tomato"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 3,
+  "fields": {
+    "name": "salt"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 4,
+  "fields": {
+    "name": "pepper"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 5,
+  "fields": {
+    "name": "oregano"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 6,
+  "fields": {
+    "name": "basil"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 7,
+  "fields": {
+    "name": "parsley"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 8,
+  "fields": {
+    "name": "minced meat"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 9,
+  "fields": {
+    "name": "bell pepper"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 10,
+  "fields": {
+    "name": "olive oil"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 11,
+  "fields": {
+    "name": "spaghetti"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 12,
+  "fields": {
+    "name": "onion"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 13,
+  "fields": {
+    "name": "garlic"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 14,
+  "fields": {
+    "name": "bacon"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 15,
+  "fields": {
+    "name": "eggs"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 16,
+  "fields": {
+    "name": "bouillon"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 17,
+  "fields": {
+    "name": "celery (stalk)"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 18,
+  "fields": {
+    "name": "carrot"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 19,
+  "fields": {
+    "name": "zucchini"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 20,
+  "fields": {
+    "name": "potatoes"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 21,
+  "fields": {
+    "name": "pear"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 23,
+  "fields": {
+    "name": "apple"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 25,
+  "fields": {
+    "name": "flour"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 26,
+  "fields": {
+    "name": "butter"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 27,
+  "fields": {
+    "name": "vodka"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 28,
+  "fields": {
+    "name": "vinegar"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 29,
+  "fields": {
+    "name": "milk"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 30,
+  "fields": {
+    "name": "sugar"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 31,
+  "fields": {
+    "name": "beef"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 32,
+  "fields": {
+    "name": "vine"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 33,
+  "fields": {
+    "name": "pizza dough"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 34,
+  "fields": {
+    "name": "tomato sauce"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 35,
+  "fields": {
+    "name": "sausage"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 36,
+  "fields": {
+    "name": "chilli"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 37,
+  "fields": {
+    "name": "oregano"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 38,
+  "fields": {
+    "name": "ribeye steak"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 39,
+  "fields": {
+    "name": "arugula"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 40,
+  "fields": {
+    "name": "peach"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 41,
+  "fields": {
+    "name": "black olives"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 42,
+  "fields": {
+    "name": "green olives"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 43,
+  "fields": {
+    "name": "thyme"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 44,
+  "fields": {
+    "name": "marjoram"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 45,
+  "fields": {
+    "name": "white mushrooms"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 46,
+  "fields": {
+    "name": "salted cucumber"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 47,
+  "fields": {
+    "name": "capers"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 48,
+  "fields": {
+    "name": "lemon"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 49,
+  "fields": {
+    "name": "sour cream"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 50,
+  "fields": {
+    "name": "pork ribs"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 51,
+  "fields": {
+    "name": "water"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 52,
+  "fields": {
+    "name": "cilantro"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 53,
+  "fields": {
+    "name": "parsley"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 54,
+  "fields": {
+    "name": "walnuts"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 55,
+  "fields": {
+    "name": "rice"
+  }
+},
+{
+  "model": "restaurant_kitchen.ingredient",
+  "pk": 56,
+  "fields": {
+    "name": "tkemali sauce"
+  }
+}
+]

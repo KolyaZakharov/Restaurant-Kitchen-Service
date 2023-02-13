@@ -28,11 +28,14 @@ A quick introduction of the minimal setup you need
   (SECRET_KEY - It's a django secret key used for hashing
 etc.)
 - python manage.py migrate
+- Use the following command to load prepared data from fixture to test and debug your code:
+ 
+`python manage.py loaddata rest_data.json`  
 - python manage.py runserver
 
 ---
 ## For login
-**Login:** `Kolya`
+**Login:** `admin`
 
-**Password**   `Ebolat100`
+**Password**   `admin`
 
