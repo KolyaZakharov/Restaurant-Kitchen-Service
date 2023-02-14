@@ -38,4 +38,3 @@ etc.)
 **Login:** `admin`
 
 **Password**   `admin`
-
