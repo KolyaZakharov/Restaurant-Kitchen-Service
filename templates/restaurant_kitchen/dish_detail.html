@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
   <body class="list-content ">
@@ -31,15 +32,19 @@
       <hr>
       <h3>
         Cooks
-        {% if dish in user.dishes.all %}
-        <a href="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-itd2 link-to-page">
-          Delete me from this dish
-        </a>
-      {% else %}
-        <a href="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-itd2 link-to-page">
-          Assign me from this dish
-        </a>
-      {% endif %}
+        <form action="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          {% if dish in user.dishes.all %}
+            <br>
+
+          <input type="submit" value="Delete me from this dish" class="btn btn-itd2 link-to-page">
+          {% else %}
+            <br>
+          <input type="submit" value="Assign me from this dish" class="btn btn-itd2 link-to-page">
+          {% endif %}
+        </form>
+
       </h3>
       <br>
       <br>

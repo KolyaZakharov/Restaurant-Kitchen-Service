@@ -51,7 +51,7 @@ class CookSearchForm(forms.Form):
     )
 
 
-def validate_years_of_experience(years_of_experience):
+def validate_years_of_experience(years_of_experience) -> int:
     if type(years_of_experience) != int:
         raise ValidationError("Experience must be integer")
     elif years_of_experience < 1:
