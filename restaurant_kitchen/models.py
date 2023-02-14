@@ -10,7 +10,7 @@ class DishType(models.Model):
     class Meta:
         ordering = ["name"]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 
@@ -20,20 +20,20 @@ class Ingredient(models.Model):
     class Meta:
         ordering = ["name"]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 
 class Cook(AbstractUser):
     years_of_experience = models.IntegerField(null=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.username} ({self.first_name} {self.last_name})"
 
     class Meta:
         ordering = ["username"]
 
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
         return reverse(
             "restaurant_kitchen:cook-detail", kwargs={"pk": self.pk}
         )
@@ -57,11 +57,11 @@ class Dish(models.Model):
         ordering = ["name"]
         verbose_name_plural = "dishes"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name}" \
                f" (price:{self.price}, dish type:{self.dish_type.name})"
 
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
         return reverse(
             "restaurant_kitchen:dish-detail",
             kwargs={"pk": self.pk}
