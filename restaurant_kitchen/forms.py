@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth import password_validation, get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
@@ -41,6 +42,27 @@ class CookForm(UserCreationForm):
         )
 
 
+class CookUpdateForm(forms.ModelForm):
+
+    class Meta:
+        model = Cook
+        fields = [
+            "username",
+            "first_name",
+            "last_name",
+            "years_of_experience",
+        ]
+
+
+class CookUpdatePasswordForm(UserCreationForm):
+    class Meta:
+        model = Cook
+        fields = [
+            "password1",
+            "password2"
+        ]
+
+
 class CookSearchForm(forms.Form):
     username = forms.CharField(
         max_length=255,
@@ -49,7 +71,6 @@ class CookSearchForm(forms.Form):
         widget=forms.TextInput(attrs={"placeholder": "Search by username.."})
 
     )
-
 
 def validate_years_of_experience(years_of_experience) -> int:
     if type(years_of_experience) != int:

@@ -1,4 +1,5 @@
-from django.urls import path
+from django.contrib.auth.views import PasswordChangeView
+from django.urls import path, include
 
 from restaurant_kitchen.views import (
     index,
@@ -22,6 +23,7 @@ from restaurant_kitchen.views import (
     CookDeleteView,
     CookUpdateView,
     ToggleAssignToDish,
+    CookUpdatePasswordView,
 )
 
 urlpatterns = [
@@ -119,6 +121,11 @@ urlpatterns = [
         "cook/<int:pk>/update/",
         CookUpdateView.as_view(),
         name="cook-update"
+    ),
+    path(
+        "cook/<int:pk>/update-password/",
+        CookUpdatePasswordView.as_view(),
+        name="cook-update-password",
     ),
     path(
         "cook/<int:pk>/delete/",

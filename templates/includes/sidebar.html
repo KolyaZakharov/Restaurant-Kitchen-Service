@@ -1,19 +1,4 @@
-{#<ul class="sidebar-nav list-group">#}
-{##}
-{#  {% if user.is_authenticated %}#}
-{#    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>#}
-{#    <li class="list-group-item"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>#}
-{#  {% else %}#}
-{#    <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>#}
-{#  {% endif %}#}
-{#  <br>#}
-{##}
-{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:index' %}">Home</a></li>#}
-{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:cook-list' %}">All cooks</a></li>#}
-{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:dish-list' %}">All dishes</a></li>#}
-{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:dish-type-list' %}">Types of dish</a></li>#}
-{#  <li class="list-group-item"><a href="{% url 'restaurant_kitchen:ingredient-list' %}">All ingredients</a></li>#}
-{#</ul>#}
+
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light navbar2">
       <div class="container-fluid ">

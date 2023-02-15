@@ -9,6 +9,8 @@ from restaurant_kitchen.forms import (
     DishForm,
     CookForm,
     CookSearchForm,
+    CookUpdateForm,
+    CookUpdatePasswordForm,
 )
 from restaurant_kitchen.mixins import SearchMixin
 
@@ -170,8 +172,14 @@ class CookCreateView(LoginRequiredMixin, generic.CreateView):
 
 class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Cook
-    form_class = CookForm
+    form_class = CookUpdateForm
     template_name = "restaurant_kitchen/cook_form.html"
+
+
+class CookUpdatePasswordView(LoginRequiredMixin, generic.UpdateView):
+    model = Cook
+    template_name = "restaurant_kitchen/cook_update_password_form.html"
+    form_class = CookUpdatePasswordForm
 
 
 class CookDeleteView(LoginRequiredMixin, generic.DeleteView):

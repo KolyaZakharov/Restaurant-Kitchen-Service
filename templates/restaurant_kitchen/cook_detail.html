@@ -26,21 +26,17 @@
       <strong>Experience:</strong>{{ cook.years_of_experience }} years
     </h3>
   </p>
+  <p>
+    <a href="{% url 'restaurant_kitchen:cook-update-password' pk=cook.id %}" class="btn btn-itd2">
+      Update password
+    </a>
+  </p>
   </div>
 
   <div class="ml-4 ">
     <h3>Dishes assigned to the cook</h3>
     <div class="container">
       {% for dish in cook.dishes.all %}
-{#        <div class="items ">#}
-{#          <p class="text-white">#}
-{#            <strong>Dish:</strong>  {{ dish.name }}#}
-{#          </p>#}
-{#          <p class="text-white">#}
-{#            <strong>Type:</strong>  {{ dish.dish_type }}#}
-{#          </p>#}
-{#          <a class="btn btn-itd2" href="{% url 'restaurant_kitchen:dish-detail' pk=dish.id %}">Check ingredients</a>#}
-{#        </div>#}
         <div class="row mb-4 forwhom2">
           <div class="col-md-6 col-sm-12">
             <h5 class="text-left">
@@ -49,7 +45,6 @@
               <br>
               <p><a class="btn btn-itd2" href="{% url 'restaurant_kitchen:dish-detail' pk=dish.id %}">Check ingredients</a></p>
             </h5>
-
           </div>
         </div>
 

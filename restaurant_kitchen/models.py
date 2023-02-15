@@ -43,7 +43,7 @@ class Dish(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    dish_type = models.ForeignKey(DishType, on_delete=models.CASCADE,)
+    dish_type = models.ForeignKey(DishType, on_delete=models.CASCADE, )
     cooks = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
         related_name="dishes"
@@ -58,10 +58,9 @@ class Dish(models.Model):
         verbose_name_plural = "dishes"
 
     def __str__(self) -> str:
-        return (
-            f"{self.name}" 
-            f" (price:{self.price}, dish type:{self.dish_type.name})"
-        )
+        return (f"{self.name}"
+                f"(price:{self.price}, dish type:{self.dish_type.name})"
+                )
 
     def get_absolute_url(self) -> str:
         return reverse(
