@@ -25,6 +25,8 @@ class Ingredient(models.Model):
 
 
 class Cook(AbstractUser):
+    first_name = models.CharField("first name", max_length=150)
+    last_name = models.CharField("last name", max_length=150)
     years_of_experience = models.IntegerField(null=True)
 
     def __str__(self) -> str:
