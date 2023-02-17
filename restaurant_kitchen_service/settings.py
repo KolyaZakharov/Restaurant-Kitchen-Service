@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!`
 DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["restaurant-kitchen-service-ei8j.onrender.com", "127.0.0.1" ]
 
 INTERNAL_IPS = [
     "127.0.0.1",
