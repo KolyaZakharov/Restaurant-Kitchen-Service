@@ -80,7 +80,7 @@ header{
 }
 .num{
   font-size: 25px;
-  color: var(--color2);
+  color: var(--bs-white) !important;
 }
 .itd_circle{
   margin: 0 auto 15px;
@@ -91,7 +91,13 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
+.itd_circle:hover{
+    color: var(--bs-white);
+    background-color:var(--color2);
+}
+
 .line{
   width: 100px;
   height: 3px;
@@ -165,26 +171,18 @@ footer{
 /*backgroun for list pages*/
 
 .back-cooklist{
-  background: url(../img/cook_back.png);
-  background-repeat: no-repeat;
-  background-position: bottom, right;
+  background: url(../img/cook_back.png) no-repeat bottom, right;
   height: 100%;
 }
 
 .back-dishlist{
-  background: url(../img/dish_back.png);
-  background-repeat: no-repeat;
-  background-position: bottom;
+  background: url(../img/dish_back.png) no-repeat bottom;
 }
 .back-dish-typelist{
-  background: url(../img/dish_type_back.png);
-  background-repeat: no-repeat;
-  background-position: bottom;
- }
+  background: url(../img/dish_type_back.png) no-repeat bottom;
+}
 .back-ingredientlist{
-    background: url(../img/ingredient-back.png);
-  background-repeat: no-repeat;
-  background-position: right;
+  background: url(../img/ingredient-back.png) no-repeat right;
 }
 
 /*detail*/
@@ -236,3 +234,4 @@ footer{
 .footer-zkh {
   height: 50px;
 }
+

@@ -54,8 +54,8 @@
           <br>
           <h4 class="text-white text-center">
             {% if user.is_authenticated %}
-                <p>You are logged in as: <ahref="{{ user.get_absolute_url }}">{{ user.get_username }}</a></p>
-                <p><a class="btn btn-itd" href="{% url 'logout'%}?next={{request.path}}">Logout</a></p
+                <p>You are logged in as: <a class="link-light" href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></p>
+                <p><a class="btn btn-itd" href="{% url 'logout'%}?next={{request.path}}">Logout</a></p>
 
             {% else %}
                <div>
@@ -75,23 +75,23 @@
     <div class="container">
         <div class="row">
           <div class="col-xl-3 col-md-6 col-sm-12">
-            <div class="itd_circle"><div class="num">{{ num_cooks }}</div></div>
-            <h5 class="text-center">Сooks</h5>
+            <a  href="{% url 'restaurant_kitchen:cook-list' %}" class="itd_circle"><div class="num">{{ num_cooks }}</div></a>
+            <h5 class="text-center text-white">Сooks</h5>
             <div class="line"></div>
           </div>
           <div class="col-xl-3 col-md-6 col-sm-12">
-            <div class="itd_circle"><div class="num">{{ num_dishes }}</div></div>
-            <h5 class="text-center">All Dishes</h5>
+            <a href="{% url 'restaurant_kitchen:dish-list' %}" class="itd_circle"><div class="num">{{ num_dishes }}</div></a>
+            <h5 class="text-center text-white">All Dishes</h5>
             <div class="line"></div>
           </div>
           <div class="col-xl-3 col-md-6 col-sm-12">
-            <div class="itd_circle"><div class="num">{{ num_dish_types }}</div></div>
-            <h5 class="text-center">Types of dish</h5>
+            <a href="{% url 'restaurant_kitchen:dish-type-list' %}" class="itd_circle"><div class="num">{{ num_dish_types }}</div></a>
+            <h5 class="text-center text-white">Types of dish</h5>
             <div class="line"></div>
           </div>
           <div class="col-xl-3 col-md-6 col-sm-12">
-            <div class="itd_circle"><div class="num">{{ num_ingredients }}</div></div>
-            <h5 class="text-center">Ingredients</h5>
+            <a href="{% url 'restaurant_kitchen:ingredient-list' %}" class="itd_circle"><div class="num">{{ num_ingredients }}</div></a>
+            <h5 class="text-center text-white">Ingredients</h5>
             <div class="line"></div>
           </div>
         </div>
