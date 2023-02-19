@@ -1,5 +1,4 @@
-from django.contrib.auth.views import PasswordChangeView
-from django.urls import path, include
+from django.urls import path
 
 from restaurant_kitchen.views import (
     index,

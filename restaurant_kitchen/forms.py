@@ -1,5 +1,4 @@
 from django import forms
-from django.contrib.auth import password_validation, get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
@@ -71,6 +70,7 @@ class CookSearchForm(forms.Form):
         widget=forms.TextInput(attrs={"placeholder": "Search by username.."})
 
     )
+
 
 def validate_years_of_experience(years_of_experience) -> int:
     if type(years_of_experience) != int:

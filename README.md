@@ -29,9 +29,6 @@ A quick introduction of the minimal setup you need
 etc.)
 - python manage.py migrate
 - Use the following command to load prepared data from fixture to test and debug your code:
- 
-`python manage.py loaddata rest_data.json`  
-- python manage.py runserver
 
 ---
 ## For login
