@@ -28,8 +28,6 @@ A quick introduction of the minimal setup you need
   (SECRET_KEY - It's a django secret key used for hashing
 etc.)
 - python manage.py migrate
-- Use the following command to load prepared data from fixture to test and debug your code:
-
 ---
 ## For login
 **Login:** `admin`
