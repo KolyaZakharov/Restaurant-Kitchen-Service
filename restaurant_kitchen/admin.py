@@ -16,7 +16,7 @@ class DishTypeAdmin(admin.ModelAdmin):
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
-    list_display = ["name", "price", "dish_type",]
+    list_display = ["name", "price", "dish_type", ]
     list_filter = ("price", "dish_type")
     search_fields = ("name",)
 

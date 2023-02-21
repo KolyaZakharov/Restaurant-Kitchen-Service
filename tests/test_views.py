@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
-
 from django.urls import reverse
 
 from restaurant_kitchen.models import DishType

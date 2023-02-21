@@ -13,7 +13,6 @@ from restaurant_kitchen.forms import (
     CookUpdatePasswordForm,
 )
 from restaurant_kitchen.mixins import SearchMixin
-
 from restaurant_kitchen.models import (
     Dish,
     DishType,

@@ -1,4 +1,5 @@
 from django.views.generic import ListView
+
 from restaurant_kitchen.forms import SearchForm
 
 
@@ -10,7 +11,7 @@ class SearchMixin(ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = SearchForm(initial={"name": name},)
+        context["search_form"] = SearchForm(initial={"name": name}, )
 
         return context
 

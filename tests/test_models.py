@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from restaurant_kitchen.models import DishType, Ingredient, Dish, Cook
+from restaurant_kitchen.models import DishType, Ingredient, Dish
 
 
 class DishTypeModelTest(TestCase):
@@ -29,7 +29,7 @@ class DishModelTest(TestCase):
         self.assertEqual(str(self.dish), "test (price:10, dish type:test)")
 
     def test_dish_get_absolute_url(self):
-        self.assertEqual(self.dish.get_absolute_url(), "/dish/1/")
+        self.assertEqual(self.dish.get_absolute_url(), f"/dish/{self.dish.id}/")
 
 
 class CookModelTest(TestCase):
@@ -53,5 +53,5 @@ class CookModelTest(TestCase):
     def test_cook_get_absolute_url(self):
         self.assertEqual(
             self.cook.get_absolute_url(),
-            "/cook/1/"
+            f"/cook/{self.cook.id}/"
         )

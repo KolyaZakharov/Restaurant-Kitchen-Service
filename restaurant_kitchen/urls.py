@@ -132,8 +132,6 @@ urlpatterns = [
         name="cook-delete"
     ),
 
-
 ]
-
 
 app_name = "restaurant_kitchen"
