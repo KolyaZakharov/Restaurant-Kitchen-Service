@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <body class="list-content">
+    <div class="container-zkh">
+      <h1>{{ object|yesno:"Update,Create" }} dish</h1>
+      <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        <input type="submit" value="Submit" class="btn btn-itd2">
+      </form>
+    </div>
+
+  </body>
+
+{% endblock %}

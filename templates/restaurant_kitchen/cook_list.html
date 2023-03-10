@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+{% block content %}
+<body class="list-content">
+  <div class="container  back-cooklist">
+    <div class="row">
+      <div class="col-12 head-text">
+        <h1 class="text-center">
+          Cook list
+        </h1>
+      </div>
+    </div>
+  <div>
+    {% include "includes/search_form.html" %}
+  </div>
+  {% if cook_list %}
+  <ul>
+    {% for cook in cook_list %}
+        <li>
+          <p>
+            <strong>
+              <a class="link-zkh" href="{{ cook.get_absolute_url }}">{{ cook.username}}{% if user == cook %} (Me){% endif %}</a>
+            </strong>
+            ({{cook.first_name}} {{ cook.last_name }})
+          </p>
+        </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>The are no cooks in cook list</p>
+  {% endif %}
+
+  </div>
+  <p>
+    <a class="btn btn-itd" href="{% url 'restaurant_kitchen:cook-create' %}">Create a new cook</a>
+  </p>
+</body>
+
+
+
+
+{% endblock %}

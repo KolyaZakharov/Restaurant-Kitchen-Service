@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <body class="list-content">
+  <div class="container-fluid container-zkh">
+    <h1>Cook</h1>
+  <div class="container-fluid detail-content">
+    <p>
+      <h3>
+        <strong>Username:</strong> {{ cook.username }}
+        <a class="btn btn-itd2" href="{% url 'restaurant_kitchen:cook-update' pk=cook.id %}">
+         Update
+        </a>
+        <a class="btn btn-dark " href="{% url 'restaurant_kitchen:cook-delete' pk=cook.id %}">
+          Delete
+        </a>
+      </h3>
+    </p>
+  <p>
+    <h3>
+      <strong>Full name:</strong> {{ cook.first_name }} {{ cook.last_name}}
+    </h3>
+  </p>
+  <p>
+    <h3>
+      <strong>Experience:</strong>{{ cook.years_of_experience }} years
+    </h3>
+  </p>
+  {% if user.get_username == cook.username %}
+    <p>
+    <a href="{% url 'restaurant_kitchen:cook-update-password' pk=cook.id %}" class="btn btn-itd2">
+      Update password
+    </a>
+  </p>
+  {% endif %}
+  </div>
+
+  <div class="ml-4 ">
+    <h3>Dishes assigned to the cook</h3>
+    <div class="container">
+      {% for dish in cook.dishes.all %}
+        <div class="row mb-4 forwhom2">
+          <div class="col-md-6 col-sm-12">
+            <h5 class="text-left">
+              <p class="text-zkh">Dish:  {{ dish.name }}</p>
+              <p class="text-zkh">Type:  {{ dish.dish_type}}</p>
+              <br>
+              <p><a class="btn btn-itd2" href="{% url 'restaurant_kitchen:dish-detail' pk=dish.id %}">Check ingredients</a></p>
+            </h5>
+          </div>
+        </div>
+
+
+    {% empty %}
+      <p>The are no dishes assigned to the cook</p>
+    {% endfor %}
+    </div>
+
+  </div>
+  </div>
+
+  </body>
+
+{% endblock %}

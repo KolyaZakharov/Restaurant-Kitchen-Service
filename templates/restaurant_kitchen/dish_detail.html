@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <body class="list-content ">
+    <div class="container-fluid container-zkh ">
+      <h1 class="">
+      {{ dish.name }}
+      <a class="btn btn-itd2" href="{% url 'restaurant_kitchen:dish-update' pk=dish.id %}">
+        Update
+      </a>
+      <a  class="btn btn-dark"href="{% url 'restaurant_kitchen:dish-delete' pk=dish.id %}">
+        Delete
+      </a>
+    </h1>
+    <p><strong>Price: </strong>{{ dish.price }}</p>
+    <p><strong>Type of dish: </strong>{{ dish.dish_type }}</p>
+    <p>
+      <strong>Description: </strong>
+      <br>
+      <div>
+        {{ dish.description }}
+      </div>
+    </p>
+    <h3>Ingredients</h3>
+    <ul>
+        {% for ingredient in dish.ingredients.all %}
+          <strong><li class="text-zkh">{{ingredient}}</li></strong>
+        {% endfor %}
+      </ul>
+    <div class="ml-4">
+      <hr>
+      <h3>
+        Cooks
+        <form action="{% url 'restaurant_kitchen:toggle-dish-assign' pk=dish.id %}" method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          {% if dish in user.dishes.all %}
+            <br>
+
+          <input type="submit" value="Delete me from this dish" class="btn btn-itd2 link-to-page">
+          {% else %}
+            <br>
+          <input type="submit" value="Assign me to this dish" class="btn btn-itd2 link-to-page">
+          {% endif %}
+        </form>
+
+      </h3>
+      <br>
+      <br>
+      {% for cook in dish.cooks.all %}
+
+        <div class="row mb-4 forwhom2">
+          <div class="col-md-6 col-sm-12">
+            <h5 class="text-left">
+              <p><a class="link-zkh" href="{% url 'restaurant_kitchen:cook-detail' pk=cook.id %}">{{cook.first_name}} {{ cook.last_name }}</a> </p>
+              <p class="text-zkh"><strong>Experience:</strong> {{ cook.years_of_experience }} years</p>
+              <br>
+            </h5>
+
+          </div>
+        </div>
+      {% empty %}
+        <p>No chef has been assigned to this dish yet</p>
+      {% endfor %}
+
+
+
+    </div>
+    </div>
+
+  </body>
+{% endblock %}

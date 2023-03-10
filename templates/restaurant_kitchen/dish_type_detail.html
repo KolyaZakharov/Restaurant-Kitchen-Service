@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <body class="list-content">
+  <div class="container-fluid container-zkh">
+    <h1>
+    {{ dishtype }}
+    <a class="btn btn-itd2" href="{% url 'restaurant_kitchen:dish-type-update' pk=dishtype.id %}">
+      update
+    </a>
+    <a class="btn btn-dark" href="{%  url 'restaurant_kitchen:dish-type-delete' pk=dishtype.id %}">
+      Delete
+    </a>
+  </h1>
+    <div class="ml-4">
+        {% for dish in dishtype.dish_set.all %}
+          <ul>
+            <li>
+              <a class="link-zkh" href="{% url 'restaurant_kitchen:dish-detail' pk=dish.id %}">{{ dish.name }}</a>
+            </li>
+          </ul>
+        {% empty %}
+          <strong>There are no dishes of this type yet</strong>
+        {% endfor %}
+
+    </div>
+  </div>
+
+  </body>
+
+{% endblock %}

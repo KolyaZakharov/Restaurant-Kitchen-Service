@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <body class="list-content">
+  <div class="container-zkh">
+    <div class="container back-ingredientlist">
+      <h1>
+      Ingredient list
+      </h1>
+    <div>
+      {% include "includes/search_form.html" %}
+    </div>
+    {% if ingredient_list %}
+      <table class="table table-borderless d-sm-table-row">
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+
+          {% for ingredient in ingredient_list %}
+          <tr>
+            <td class="text-zkh"><strong>{{ ingredient }}</strong></td>
+            <td>
+              <a class="btn btn-itd" href="{% url 'restaurant_kitchen:ingredient-update' pk=ingredient.id %}">
+                Update
+              </a>
+            </td>
+            <td>
+              <a class="btn btn-dark" href="{% url 'restaurant_kitchen:ingredient-delete' pk=ingredient.id %}">
+                Delete
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+
+
+      </table>
+
+      {% else %}
+        <p>The are no ingredients in ingredient-list</p>
+      {% endif %}
+      <p>
+       <a class="btn btn-itd" href="{%  url 'restaurant_kitchen:ingredient-create' %}">
+          Create ingredient
+        </a>
+      </p>
+    </div>
+  </div>
+
+  </body>
+
+{% endblock %}
